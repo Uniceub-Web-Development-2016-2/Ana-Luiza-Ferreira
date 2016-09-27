@@ -12,7 +12,7 @@ USE `mydb` ;
 DROP TABLE IF EXISTS `mydb`.`tb_client` ;
 
 CREATE  TABLE IF NOT EXISTS `mydb`.`tb_client` (
-  `id_client` INT NOT NULL ,
+  `id_client` INT NOT NULL AUTO_INCREMENT ,
   `name_client` VARCHAR(100) NOT NULL ,
   `cpf_client` VARCHAR(100) NOT NULL ,
   `password_client` VARCHAR(100) NOT NULL ,
@@ -28,7 +28,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`tb_user` ;
 
 CREATE  TABLE IF NOT EXISTS `mydb`.`tb_user` (
-  `id_user` INT NOT NULL ,
+  `id_user` INT NOT NULL AUTO_INCREMENT ,
   `name_user` VARCHAR(100) NOT NULL ,
   `cpf_user` VARCHAR(100) NOT NULL ,
   `password_user` VARCHAR(100) NOT NULL ,
@@ -43,7 +43,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`tb_clothes` ;
 
 CREATE  TABLE IF NOT EXISTS `mydb`.`tb_clothes` (
-  `id_clothes` INT NOT NULL ,
+  `id_clothes` INT NOT NULL AUTO_INCREMENT ,
   `cod_client` INT NOT NULL ,
   `datedelivery_clothes` DATE NOT NULL ,
   `datereturn_clothes` DATE NOT NULL ,
@@ -63,7 +63,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`tb_service` ;
 
 CREATE  TABLE IF NOT EXISTS `mydb`.`tb_service` (
-  `id_service` INT NOT NULL ,
+  `id_service` INT NOT NULL AUTO_INCREMENT ,
   `cost_service` DECIMAL(3,3) NOT NULL ,
   `start_service` DATE NOT NULL ,
   `finish_service` DATE NOT NULL ,
