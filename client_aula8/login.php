@@ -17,3 +17,4 @@ public function verifyHash($userinput,$serveroutput) {
 //else
 //	echo "Sai fora seu homem!";
 ?>
+
