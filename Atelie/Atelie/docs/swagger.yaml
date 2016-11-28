@@ -1,0 +1,400 @@
+swagger: '2.0'
+
+info:
+  version: "1.0.0"
+  title: Ateliê Ponto a Ponto
+  description: The first version of the "Atelier Ponto a Ponto" API introduces the connection between the server and the client code. 
+host: atelieStore.swagger.io
+basePath: /api
+schemes:
+  - http
+################################################################################
+#                                   Tags                                       #
+################################################################################
+tags:
+  - name: Client
+    description:
+          The user "Client" has limited acess on your own repository.
+  - name: Adm
+    description: |
+      The user "Adm" has full acess in the system.
+
+  - name: Clothes
+
+################################################################################
+#                                   Path                                       #
+################################################################################ 
+
+paths:
+
+  /clientClothes:
+    
+    get:
+      tags:
+      - Client
+      - Clothes
+      
+      
+      description:
+        Gets `Clothes` objects. Return all the client's clothes.
+     
+      parameters:
+        
+        - name: client-id
+          in: query
+          description: Search for a client ID
+          type: number
+          format: double
+     
+      responses:
+       
+        200:
+          description: Successful response
+       
+          schema:
+             $ref: '#/definitions/Clothes'
+        400:
+          description: Error
+          
+          schema:
+             $ref: '#/definitions/errorModel'             
+   
+  /client:
+    
+    get:
+      tags:
+      - Adm
+      - Client
+    
+      description: 
+        Gets `Clients` objects. Search for clients ID.
+     
+      parameters:
+       
+        -
+          name: client-id
+          in: query
+          description: Search for client
+          required: true
+          type: number
+          format: double
+      
+      responses:
+       
+        200:
+          description: Successful response
+          
+          schema:
+             $ref: '#/definitions/Client'
+             
+    post:
+      tags:
+      - Adm
+      - Client 
+      
+      description: Creates a new client.  Duplicates are not allowed
+      operationId: addClient
+      parameters:
+        - name: client
+          in: body
+          description: Add a new client
+          required: true
+          schema:
+            $ref: '#/definitions/Client'
+      responses:
+        '200':  
+          description: Sucessful operation 
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/errorModel'
+    put:
+      tags:
+      - Adm
+      - Client
+      
+      description: Update a client.
+      operationId: editClient
+      parameters:
+        - name: client
+          in: body
+          description: Update a client.
+          required: true
+          schema:
+            $ref: '#/definitions/Client'
+      responses:
+        '200':  
+          description: Sucessful operation 
+        '405':
+          description: Validation exception
+        '400':  
+          description: Error
+          schema:
+            $ref: '#/definitions/errorModel'
+            
+    delete:
+      tags:
+      - Adm
+      - Client
+      
+      description: Deletes a single client based on the ID supplied
+      operationId: deleteClient
+      parameters:
+       - name: client-id
+         in: query
+         description: Client's ID to delete
+         required: true
+         type: integer
+         
+      responses:
+       '400':
+         description: Error
+         schema:
+            $ref: '#/definitions/errorModel'
+       '200':
+         description: Sucessful operation
+       
+     
+  /adm:
+    
+    get:
+      tags:
+      - Adm
+     
+      description: 
+        Gets `Adm` objects. Search for adm's ID.
+     
+      parameters:
+        
+        -
+          name: adm-id
+          in: query
+          description: Search for an Adm
+          required: true
+          type: number
+          format: double
+     
+      responses:
+       
+        200:
+          description: Successful response
+        
+          schema:
+             $ref: '#/definitions/Adm'
+             
+    post:
+      tags:
+      - Adm
+      
+      description: Creates a new adm object. Duplicates are not allowed
+      operationId: addAdm
+      parameters:
+        - name: adm
+          in: body
+          description: Add a new adm
+          required: true
+          schema:
+            $ref: '#/definitions/Adm'
+      responses:
+        '200':  
+          description: Sucessful operation 
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/errorModel'
+    put:
+      tags:
+      - Adm
+      
+      description: Update an Adm.
+      operationId: editAdm
+      parameters:
+        - name: adm
+          in: body
+          description: Update an Adm
+          required: true
+          schema:
+            $ref: '#/definitions/Adm'
+      responses:
+        '200':  
+          description: Sucessful operation 
+        '405':
+          description: Validation exception
+        '400':  
+          description: Error
+          schema:
+            $ref: '#/definitions/errorModel'
+            
+    delete:
+      tags:
+      - Adm
+      
+      description: Deletes a single adm based on the ID supplied
+      operationId: deleteAdm
+      parameters:
+       - name: adm-id
+         in: query
+         description: Adm's ID to delete
+         required: true
+         type: integer
+         format: int64
+      responses:
+       '400':
+         description: Error
+         schema:
+            $ref: '#/definitions/errorModel'
+       '200':
+         description: Sucessful operation 
+         
+     
+  /clothes:
+   
+    get:
+      tags:
+      - Adm
+      - Clothes
+      
+      description: 
+        Gets Cloting objects. Search for a Cloting ID.
+     
+      parameters:
+        
+        -
+          name: clothing-id
+          in: query
+          description: Search for clothes
+          required: true
+          type: number
+          format: double
+      
+      responses:
+      
+        200:
+         description: Successful response 
+         schema:
+            $ref: '#/definitions/Clothes'
+        
+     
+    post:
+      tags:
+      - Adm
+      - Clothes
+      
+      description: Creates a new clothing. Duplicates are not allowed
+      parameters:
+        - name: clothing
+          in: body
+          description: Add a new clothing object 
+          required: true
+          schema:
+            $ref: '#/definitions/Clothes'
+      responses:
+        '200':  
+          description: Sucessful operation 
+        '400':
+          description: Error
+          schema:
+            $ref: '#/definitions/errorModel'
+    put:
+      tags:
+      - Adm
+      - Clothes
+      
+      description: Update a clothing object.
+      operationId: editClothing
+      parameters:
+        - name: clothing-id
+          in: body
+          description: Update clothing
+          required: true
+          schema:
+            $ref: '#/definitions/Clothes'
+      responses:
+        '200':  
+          description: Sucessful operation 
+        '405':
+          description: Validation exception
+        '400':  
+          description: Error
+          schema:
+            $ref: '#/definitions/errorModel'
+            
+    delete:
+      tags:
+      - Adm
+      - Clothes
+      
+      description: Deletes a clothing object based on the ID supplied
+      operationId: deleteClothes
+      parameters:
+       - name: clothes-id
+         in: query
+         description: Clothes's ID to delete
+         required: true
+         type: integer
+         
+      responses:
+       '400':
+         description: Error
+         schema:
+            $ref: '#/definitions/errorModel'
+       '200':
+         description: Sucessful operation 
+         
+definitions:
+
+  Client:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      cpf:
+        type: string
+      password:
+        type: string
+      email:
+        type: string
+      phone_number:
+        type: string
+        
+  Adm:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      cpf:
+        type: string
+      password:
+        type: string
+      email:
+        type: string 
+        
+  Clothes:
+    type: object
+    properties:
+      id:
+        type: string
+      date_delivery:
+        type: string
+        format: date
+      date_return:
+        type: string
+        format: date
+      cost:
+        type: integer
+        
+  errorModel:
+    type: object
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int
+      message:
+        type: string

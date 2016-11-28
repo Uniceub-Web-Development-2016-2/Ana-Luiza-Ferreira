@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SisPAP</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="images/logo1.png">
+
+  </head>
+  <body style="background:#adc0ef; color:white;  font-size:15px; background-size:cover;">
+  <img src="images/logo1.png"/>
+            <img src="images/plaquinha.png"> 
+            <img src="images/sistema.png" style="position:relative; right:140px; top:5px;"> 
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs" style="font-size:20px; font-family:Arial; color:white">
+				<li class="dropdown pull-left" style="color:white;">
+					 <a href="cadus.html" data-toggle="dropdown" class="dropdown-toggle" >Cadastro<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="cadus.html">Cadastrar Cliente</a>
+						</li>
+						
+					</ul>
+				</li>
+                <li class="dropdown pull-left">
+					 <a href="cadus.html" data-toggle="dropdown" class="dropdown-toggle">Consultas<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Consultar Cliente</a>
+						</li>
+					
+					</ul>
+				</li>
+                <li class="dropdown pull-left">
+					 <a href="cadus.html" data-toggle="dropdown" class="dropdown-toggle">Manutenção<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Editar Cliente</a>
+						</li>
+					
+					</ul>
+				</li>
+			</ul>
+			<form role="form" style="margin-top:20px;">
+				<div class="form-group">
+					 
+					<label for="exampleInputEmail1">
+						Título:
+					</label>
+					<input type="title_recipe" class="form-control" id="title_recipe">
+				</div>
+				<div class="form-group">	 
+				  <label for="exampleInputPassword1">
+						Categoria:
+					</label>
+					<select type="category_recipe" class="form-control" id="category_recipe">
+                    <option value="category_recipe">Acompanhamentos</option>
+                    <option value="category_recipe">Aves</option>
+                    <option value="category_recipe">Bebidas</option>
+                    <option value="category_recipe">Carnes</option>
+                    <option value="category_recipe">Entradas</option>
+                    <option value="category_recipe">Massas</option>
+                    <option value="category_recipe">Paes e Salgados</option>
+                    <option value="category_recipe">Peixes e Frutos</option>
+                     <option value="category_recipe">Saladas</option>
+                    <option value="category_recipe">Sobremesa</option>
+                    </select>
+				</div>
+                <div class="form-group">
+					 
+					<label for="exampleInputEmail1">
+						Ingredientes:
+					</label>
+					<input type="ingredients_recipe" class="form-control" id="ingredients_recipe">
+				</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputPassword1">
+					Observações:
+					</label>
+                    <textarea type="txt_recipe" class="form-control" id="txt_recipe" style="height:100px;">
+</textarea>
+				</div>
+                <div class="form-group">	 
+				  <label for="exampleInputPassword1">
+					Nacionalidade:
+					</label>
+					<select type="nationality_recipe" class="form-control" id="nationality_recipe">
+                    <option value="nationality_recipe">Brasileira</option>
+                    <option value="nationality_recipe">Arabe</option>
+                    <option value="nationality_recipe">Chinesa</option>
+                    <option value="nationality_recipe">Francesa</option>
+                     <option value="nationality_recipe">Indiana</option>
+                    <option value="nationality_recipe">Japonesa</option>
+                    <option value="nationality_recipe">Marroquina</option>
+                    <option value="nationality_recipe">Outra</option>
+                    </select>
+				</div>
+                <div class="form-group">
+					 
+					<label for="exampleInputPassword1">
+						Data de Nascimento:
+					</label>
+                    <select type="difficulty_recipe" class="form-control" id="difficulty_recipe">
+                    <option value="difficulty_recipe">Facil</option>
+                    <option value="difficulty_recipe">Media</option>
+                    <option value="difficulty_recipe">Dificil</option>
+                    <option value="difficulty_recipe">Muito Dificil</option>
+                    </select>
+				</div>		
+				<button type="submit" class="btn btn-default">
+					Cadastrar
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
