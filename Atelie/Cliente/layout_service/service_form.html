@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+ 
+<html>
+ <head>
+ <title>	SisPAP</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+ <link rel="icon" href="images/maquina.png">
+ </head>
+
+ <body style="font-size:25px; background:#adc0ef;">
+  <img src="images/maquina.png"/>
+  <img src="images/logo.png"> 
+
+<form action="login.php" method="post">
+
+<!-- DADOS DO SERVIÇO-->
+<fieldset>
+ <legend>Dados do Serviço</legend>
+ <table cellspacing="10">
+  <tr>
+   <td>
+    <label for="custo">Custo: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="cost_service" id="cost_service" size="20" maxlength="30" style="font-size:20px;"> 
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="start_service">Data de Início do Serviço: </label>
+   </td>
+   <td align="left">
+    <input type="date" name="start_service" id="start_service" size="30" maxlength="30" style="font-size:20px;"> 
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label>Data de Término do Serviço:</label>
+   </td>
+   <td align="left">
+    <input type="date" id="finish_service" name="finish_service" size="11" maxlength="11" style="font-size:20px;">
+   </td>
+  </tr>
+ </table>
+</fieldset>
+<br />
+<button type="submit" class="btn btn-default" style="font-size:20px; background:white;">
+					Incluir
+</button>
+<input type="reset" class="btn btn-default" style="font-size:20px; background:white;" value="Limpar">
+</form>
+
+ </body>
+</html>

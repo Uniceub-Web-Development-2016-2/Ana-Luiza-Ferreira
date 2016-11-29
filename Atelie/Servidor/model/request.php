@@ -57,7 +57,7 @@ class Request{
         public function setResource($resource){
         	$s = explode("?", $resource);
 		    $r = explode("/", $s[0]);
-		   $this->resource = $r[2];		
+		   $this->resource = $r[3];		
 	}
         public function getResource(){
                 return $this->resource;
@@ -65,7 +65,7 @@ class Request{
         public function setOperation($path) {
                 $s = explode("?", $path);
                 $r = explode("/", $s[0]);
-                $this->operation = $r[3];
+                $this->operation = $r[4];
     }
     
     public function getOperation() {
