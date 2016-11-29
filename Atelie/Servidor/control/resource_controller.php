@@ -1,7 +1,7 @@
 <?php
 
-include_once ('.Atelie/Servidor/model/request.php');
-include_once ('.Atelie/Servidor/control/db_manager.php');
+include_once ('../Servidor/model/request.php');
+include_once ('../db/db_manager.php');
 
 class ResourceController
 {	

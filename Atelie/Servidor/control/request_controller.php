@@ -1,6 +1,6 @@
 <?php
-include ('../Atelie/Servidor/control/resource_controller.php');
-include_once('../Atelie/Servidor/model/request.php');
+include ('../Servidor/control/resource_controller.php');
+include_once('../Servidor/model/request.php');
 
 class RequestController{
 	const VALID_METHODS = array('GET', 'POST', 'PUT', 'DELETE');
